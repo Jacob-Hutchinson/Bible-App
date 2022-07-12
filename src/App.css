@@ -37,11 +37,14 @@
   }
 }
 h3 {
-
+font-family: auto;
 }
 #text {
   width: 30%;
   text-align: center;
   display: inline-flex;
   align-items: center;
+}
+button {
+  margin: 4px;
 }
