@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import { useState } from 'react';
 
 function App() {
+  const [chapter, setChapter] = useState()
+  const [text, setText] = useState()
+
+  const handleClick = e => {
+    axios.get(`http://localhost:4004/chapter`)
+    .then(res => {
+      console.log(res.data)
+      setChapter(res.data.data)
+    })
+  }
+// console.log(chapter)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Read the Bible</h1>
+        <button onClick={handleClick}>Get Inspiration</button>
+        <br />
+          {chapter && <h2>{chapter.reference}</h2>}
+        <div id='text'>
+        {chapter && <h3>{chapter.content}</h3>}
+        </div>
     </div>
   );
 }
