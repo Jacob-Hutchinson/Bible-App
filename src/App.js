@@ -8,7 +8,7 @@ function App() {
   const [previous, setPrevious] = useState()
 
   const handleClick = e => {
-    axios.get(`/chapter`)
+    axios.get(`http://localhost:4004/chapter`)
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
@@ -18,7 +18,7 @@ function App() {
   }
 
   const handleOldClick = e => {
-    axios.get(`/oldT`)
+    axios.get(`http://localhost:4004/oldT`)
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
@@ -28,7 +28,7 @@ function App() {
   }
 
   const handleNewClick = e => {
-    axios.get(`/newT`)
+    axios.get(`http://localhost:4004/newT`)
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
@@ -38,7 +38,7 @@ function App() {
   }
 
   const handlePsalms = e => {
-    axios.get(`/psalms`)
+    axios.get(`http://localhost:4004/psalms`)
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
@@ -48,7 +48,7 @@ function App() {
   }
 
   const handleWisdom = e => {
-    axios.get(`/wisdom`)
+    axios.get(`http://localhost:4004/wisdom`)
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
@@ -58,7 +58,7 @@ function App() {
   }
 
   const handleGospel = e => {
-    axios.get(`/gospel`)
+    axios.get(`http://localhost:4004/gospel`)
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
@@ -68,7 +68,7 @@ function App() {
   }
 
   const handleNext = e => {
-    axios.post(`/next`, {next: next})
+    axios.post(`http://localhost:4004/next`, {next: next})
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
@@ -78,7 +78,7 @@ function App() {
   }
 
   const handlePrevious = e => {
-    axios.post(`/previous`, {previous: previous})
+    axios.post(`http://localhost:4004/previous`, {previous: previous})
     .then(res => {
       console.log(res.data)
       setChapter(res.data.data)
