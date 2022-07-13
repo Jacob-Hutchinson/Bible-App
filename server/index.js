@@ -22,7 +22,7 @@ app.get('/gospel', getGospel)
 app.post('/previous', getPrevious)
 app.post('/next', getNext)
 
-const {PORT} = process.env;
+const {PORT} = process.env.PORT || 4004;
 
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, '../build', 'index.html'))
