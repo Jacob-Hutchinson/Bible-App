@@ -40,11 +40,20 @@ h3 {
 font-family: auto;
 }
 #text {
-  width: 30%;
+  width: 50%;
   text-align: center;
   display: inline-flex;
   align-items: center;
 }
 button {
   margin: 4px;
+}
+
+@media screen and (max-width: 992px) {
+  #text {
+  width: 70%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  }
 }
