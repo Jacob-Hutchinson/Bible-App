@@ -1,6 +1,8 @@
 import './App.css';
 import axios from 'axios'
 import { useState } from 'react';
+import Button from '@mui/material/Button'
+
 
 function App() {
   const [chapter, setChapter] = useState()
@@ -91,24 +93,32 @@ function App() {
   return (
     <div className="App">
       <h1>Read the Bible</h1>
-        <button onClick={handleClick}>Get Inspiration</button>
+        {/* <button onClick={handleClick}>Get Inspiration</button> */}
+        <Button variant="contained" color="secondary" onClick={handleClick}>Get Inspiration</Button>
         <br />
         <br />
-        <button onClick={handleOldClick}>Old Testament</button>
-        <button onClick={handleNewClick}>New Testament</button>
+        <Button variant="contained" color="secondary" onClick={handleOldClick}>Old Testament</Button>
+        {/* <button onClick={handleOldClick}>Old Testament</button> */}
+        <Button variant="contained" color="secondary" onClick={handleNewClick}>New Testament</Button>
+        {/* <button onClick={handleNewClick}>New Testament</button> */}
         <br />
         <br />
-        <button onClick={handleGospel}>Gospel</button>
-        <button onClick={handlePsalms}>Psalms</button>
-        <button onClick={handleWisdom}>Wisdom</button>
+        <Button variant="contained" color="secondary" onClick={handleGospel}>Gospel</Button>
+        {/* <button onClick={handleGospel}>Gospel</button> */}
+        <Button variant="contained" color="secondary" onClick={handlePsalms}>Psalms</Button>
+        {/* <button onClick={handlePsalms}>Psalms</button> */}
+        <Button variant="contained" color="secondary" onClick={handleWisdom}>Wisdom</Button>
+        {/* <button onClick={handleWisdom}>Wisdom</button> */}
         <br />
           {chapter && <h2>{chapter.reference}</h2>}
         <div id='text'>
         {chapter && <h3>{chapter.content}</h3>}
         </div>
         {chapter&& <div>
-        <button onClick={handlePrevious}>Previous Chapter</button>
-        <button onClick={handleNext}>Next Chapter</button>
+        <Button variant="contained" color="secondary" onClick={handlePrevious}>Previous Chapter</Button>
+        <Button variant="contained" color="secondary" onClick={handleNext}>Next Chapter</Button>
+        {/* <button onClick={handlePrevious}>Previous Chapter</button> */}
+        {/* <button onClick={handleNext}>Next Chapter</button> */}
         </div>}
     </div>
   );
